@@ -1,26 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { HttpModule } from '@angular/http';
+import {HttpClientModule} from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { DepartmentListComponent } from './department-list/department-list.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+
+import { LoginService } from './login/login.service';
+import { RegisterService } from './register/register.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeeListComponent,
-    DepartmentListComponent
+    DepartmentListComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule, ReactiveFormsModule,HttpModule,HttpClientModule,
     RouterModule.forRoot([
       {'path':"employee","component":EmployeeListComponent},
-      {'path':"department","component":DepartmentListComponent}
+      {'path':"department","component":DepartmentListComponent},
+      {'path':"login","component":LoginComponent},
+      {'path':"register","component":RegisterComponent}
   ])
   ],
-  providers: [],
+  providers: [LoginService,RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
