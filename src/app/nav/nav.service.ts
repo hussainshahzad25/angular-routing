@@ -8,7 +8,7 @@ import 'rxjs/add/observable/throw';
 
 import {Observable} from 'rxjs';
 @Injectable()
-export class LoginService {
+export class NavService {
 
     private userListUrl : string = "http://localhost:8090/api/userList";
     private registerUrl : string = "http://localhost:8090/api/register";

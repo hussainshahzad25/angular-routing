@@ -13,9 +13,13 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { DepartmentListComponent } from './department-list/department-list.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NavComponent } from './nav/nav.component';
+
 
 import { LoginService } from './login/login.service';
 import { RegisterService } from './register/register.service';
+import { NavService } from './nav/nav.service';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +27,9 @@ import { RegisterService } from './register/register.service';
     EmployeeListComponent,
     DepartmentListComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -32,10 +38,12 @@ import { RegisterService } from './register/register.service';
       {'path':"employee","component":EmployeeListComponent},
       {'path':"department","component":DepartmentListComponent},
       {'path':"login","component":LoginComponent},
-      {'path':"register","component":RegisterComponent}
+      {'path':"register","component":RegisterComponent},
+      {'path':"details","component":NavComponent},
+      
   ])
   ],
-  providers: [LoginService,RegisterService],
+  providers: [LoginService,RegisterService,NavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

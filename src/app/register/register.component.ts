@@ -19,6 +19,7 @@ export class RegisterComponent  {
 
     let jsonData = JSON.stringify(value);
     console.log(jsonData);
+    
     this
       .registerService
       .register(value)
