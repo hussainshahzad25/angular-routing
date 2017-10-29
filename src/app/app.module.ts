@@ -19,6 +19,7 @@ import { NavComponent } from './nav/nav.component';
 import { LoginService } from './login/login.service';
 import { RegisterService } from './register/register.service';
 import { NavService } from './nav/nav.service';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -29,17 +30,19 @@ import { NavService } from './nav/nav.service';
     LoginComponent,
     RegisterComponent,
     NavComponent,
+    HomeComponent,
 
   ],
   imports: [
     BrowserModule,
     FormsModule, ReactiveFormsModule,HttpModule,HttpClientModule,
     RouterModule.forRoot([
+      {'path':"home","component":HomeComponent},
       {'path':"employee","component":EmployeeListComponent},
       {'path':"department","component":DepartmentListComponent},
       {'path':"login","component":LoginComponent},
       {'path':"register","component":RegisterComponent},
-      {'path':"details","component":NavComponent},
+      {'path':"nav","component":NavComponent},
       
   ])
   ],
