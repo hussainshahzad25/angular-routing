@@ -1,11 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import {LoginService} from "./login.service"
+import { Router } from '@angular/router';
+import { LoginService } from "./login.service"
 
 @Component({
-  selector: 'app-login', 
+  selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']})
+  styleUrls: ['./login.component.css']
+})
 export class LoginComponent implements OnInit {
 
   shortInfo = [];
@@ -13,7 +15,7 @@ export class LoginComponent implements OnInit {
   fullInfo = [];
 
   user = [];
-  constructor(private loginService : LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit() {
     this.shortInfo = this
@@ -25,12 +27,23 @@ export class LoginComponent implements OnInit {
       .getInfos()
       .subscribe(response => this.fullInfo = response);
   }
-  submitValue(value) {
+ 
+  message: string;
+  login(value) {
+
+    // let jsonData = JSON.stringify(value);
+    // console.log(jsonData);
+
     this
       .loginService
-      .register(value)
-      .subscribe(response => this.user = response);
+      .login(value)
+      .subscribe((data) => {
+        console.log(data);
+        this.router.navigate(['/dashboard']);
+      }, (error) => {               
+        let jsonData = JSON.parse(error._body);
+        console.log(jsonData.message);        
+        alert(jsonData.message)
+      });
   }
-
-  login(value) {}
 }

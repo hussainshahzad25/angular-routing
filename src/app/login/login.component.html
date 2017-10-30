@@ -26,35 +26,29 @@
                 </li>
             </ul>
         </nav>
-        <!-- Navigation Bar End -->
-        <!-- <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
-            <div class="padding"></div>
-            <div class="table-responsive">
-                <div class="padding"></div>
-                <form class="form-inline" #userForm="ngForm" (ngSubmit)="login(userForm.value)" novalidate>
-
-                    <div class="form-group">
-                        <label for="email">Email address:</label>
-                        <input type="email" class="form-control" id="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-            </div>
-        </main> -->
-
-
-        <form class="form-signin">
+       
+        <form class="form-signin" #userForm="ngForm" (ngSubmit)="login(userForm.value)">
             <h2 class="form-signin-heading">Please sign in</h2>
             <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <input type="email" #emailRef="ngModel" required class="form-control" name="email" ngModel placeholder="Email">
+            <div [hidden]="emailRef.valid || emailRef.pristine" class="alert alert-danger">
+                Please Enter Your Email ID
+            </div>
             <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <input type="password" #passwordRef="ngModel" required minlength="5" class="form-control" name="password" ngModel id="inputPassword"
+                placeholder="Password">
+            <div *ngIf="passwordRef.errors && (passwordRef.dirty || passwordRef.touched)" class="alert alert-danger">
+                <div [hidden]="!passwordRef.errors.required">
+                    Plase Enter Your Password
+                </div>
+                <div [hidden]="!passwordRef.errors.minlength">
+                    Not a Valid Password
+                </div>
+            </div>
 
+            <!-- <button class="btn btn-lg btn-primary btn-block" [routerLink]="['/dashboard']"  type="submit">Sign in</button> -->
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+
         </form>
     </div>
     <!-- row end -->

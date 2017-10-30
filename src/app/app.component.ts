@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import {ToastyService, ToastyConfig, ToastOptions, ToastData} from 'ng2-toasty';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
