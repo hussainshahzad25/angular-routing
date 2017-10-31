@@ -1,88 +1,57 @@
-<!-- container-fluid Start -->
 <div class="container-fluid">
-    <!-- row start -->
-    <div class="row">
-        <!-- Navigation Bar Start -->
-        <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" routerLink="/nav" routerLinkActive="active">Overview
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/login" routerLinkActive="active">Login Page</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/register" routerLinkActive="active">Registration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/employee" routerLinkActive="active">Employee List</a>
-                </li>
-            </ul>
-
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/department" routerLinkActive="active">Department List</a>
-                </li>
-            </ul>
-        </nav>
-        <!-- Navigation Bar End -->
-        <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+    <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+        <div class="padding"></div>
+        <!-- <div class="table-responsive"> -->
+            <!-- <h2>Registration Page</h2> -->
             <div class="padding"></div>
-            <div class="table-responsive">
-                <!-- <h2>Registration Page</h2> -->
-                <div class="padding"></div>
-                <form #userForm="ngForm" (ngSubmit)="register(userForm.value)" novalidate>
-                    <table class="table table-bordered">
-                        <tr>
-                            <th>First Name</th>
-                            <td>
-                                <input type="text" required autofocus class="form-control" id="firstName" name="firstName" ngModel>
-                            </td>
-                            <th>Last Name</th>
-                            <td>
-                                <input type="lastName" class="form-control" id="lastName" name="lastName" ngModel>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Email</th>
-                            <td>
-                                <input type="email" class="form-control" id="email" name="email" ngModel>
-                            </td>
-                            <th>Password</th>
-                            <td>
-                                <input type="password" class="form-control" id="pwd" name="password" ngModel>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>Mobile</th>
-                            <td>
-                                <input type="text" class="form-control" id="mobile" name="mobile" ngModel>
-                            </td>
-                            <th>State</th>
-                            <td>
-                                <input type="text" class="form-control" id="state" name="state" ngModel>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>City</th>
-                            <td>
-                                <input type="text" class="form-control" id="city" name="city" ngModel>
-                            </td>
-                            <th>Pin</th>
-                            <td>
-                                <input type="text" class="form-control" id="pincode" name="pincode" ngModel>
-                            </td>
-                        </tr>
-                    </table>
-                    <div align="center">
-                        <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </main>
-    </div>
-    <!-- row end -->
+            <form #userForm="ngForm" (ngSubmit)="register(userForm.value)" novalidate>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>First Name</th>
+                        <td>
+                            <input type="text" required autofocus class="form-control" id="firstName" name="firstName" ngModel>
+                        </td>
+                        <th>Last Name</th>
+                        <td>
+                            <input type="lastName" class="form-control" id="lastName" name="lastName" ngModel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>
+                            <input type="email" class="form-control" id="email" name="email" ngModel>
+                        </td>
+                        <th>Password</th>
+                        <td>
+                            <input type="password" class="form-control" id="pwd" name="password" ngModel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Mobile</th>
+                        <td>
+                            <input type="text" class="form-control" id="mobile" name="mobile" ngModel>
+                        </td>
+                        <th>State</th>
+                        <td>
+                            <input type="text" class="form-control" id="state" name="state" ngModel>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <td>
+                            <input type="text" class="form-control" id="city" name="city" ngModel>
+                        </td>
+                        <th>Pin</th>
+                        <td>
+                            <input type="text" class="form-control" id="pincode" name="pincode" ngModel>
+                        </td>
+                    </tr>
+                </table>
+                <div align="center">
+                    <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+                </div>
+            </form>
+            <a class="login" [routerLink]="['/login']">Click to Login</a>
+        <!-- </div> -->
+    </main>
 </div>
-<!-- container-fluid End -->

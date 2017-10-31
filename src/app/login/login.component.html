@@ -1,56 +1,29 @@
 <!-- container-fluid Start -->
 <div class="container-fluid">
-    <!-- row start -->
-    <div class="row">
-        <!-- Navigation Bar Start -->
-        <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link active" routerLink="/nav" routerLinkActive="active">Overview
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/login" routerLinkActive="active">Login Page</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/register" routerLinkActive="active">Registration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/employee" routerLinkActive="active">Employee List</a>
-                </li>
-            </ul>
-            <ul class="nav nav-pills flex-column">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/department" routerLinkActive="active">Department List</a>
-                </li>
-            </ul>
-        </nav>
-       
-        <form class="form-signin" #userForm="ngForm" (ngSubmit)="login(userForm.value)">
-            <h2 class="form-signin-heading">Please sign in</h2>
-            <label for="inputEmail" class="sr-only">Email address</label>
-            <input type="email" #emailRef="ngModel" required class="form-control" name="email" ngModel placeholder="Email">
-            <div [hidden]="emailRef.valid || emailRef.pristine" class="alert alert-danger">
-                Please Enter Your Email ID
+    <form class="form-signin" #userForm="ngForm" (ngSubmit)="login(userForm.value)">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" #emailRef="ngModel" required class="form-control" name="email" ngModel placeholder="Email">
+        <div *ngIf="emailRef.errors && (emailRef.dirty || emailRef.touched)" class="alert alert-danger">
+            <div [hidden]="!emailRef.errors.required">
+                Plase Enter Your Email Id
+            </div>           
+        </div>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" #passwordRef="ngModel" required minlength="8" class="form-control" name="password" ngModel id="inputPassword"
+            placeholder="Password">
+        <div *ngIf="passwordRef.errors && (passwordRef.dirty || passwordRef.touched)" class="alert alert-danger">
+            <div [hidden]="!passwordRef.errors.required">
+                Plase Enter Your Password
             </div>
-            <label for="inputPassword" class="sr-only">Password</label>
-            <input type="password" #passwordRef="ngModel" required minlength="5" class="form-control" name="password" ngModel id="inputPassword"
-                placeholder="Password">
-            <div *ngIf="passwordRef.errors && (passwordRef.dirty || passwordRef.touched)" class="alert alert-danger">
-                <div [hidden]="!passwordRef.errors.required">
-                    Plase Enter Your Password
-                </div>
-                <div [hidden]="!passwordRef.errors.minlength">
-                    Not a Valid Password
-                </div>
+            <div [hidden]="!passwordRef.errors.minlength">
+                Not a Valid Password
             </div>
+        </div>
+        <!-- <button  [routerLink]="['/dashboard']" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button> -->
+        <button [disabled]="!userForm.form.valid" type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
 
-            <!-- <button class="btn btn-lg btn-primary btn-block" [routerLink]="['/dashboard']"  type="submit">Sign in</button> -->
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-
-        </form>
-    </div>
-    <!-- row end -->
+    </form>
+    <a [routerLink]="['/register']">Click to Register</a>
 </div>
 <!-- container-fluid End -->

@@ -11,3 +11,9 @@
 .badge{
     font-size: 20px;
 }
+.font{
+    padding: 10px;
+    margin: 10px;
+    color: black;
+   text-align: left;
+}
