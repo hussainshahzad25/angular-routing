@@ -50,17 +50,17 @@ export class LoginService {
             .catch((error : any) => Observable.throw(error.json().error || 'Server error'));
     }
 
-    register(body : Object) : Observable < any > {
-        let bodyString = JSON.stringify(body);
-        console.log(bodyString);
-        let headers = new Headers({'Content-Type': 'application/json'});
-        let options = new RequestOptions({headers: headers});
+    // register(body : Object) : Observable < any > {
+    //     let bodyString = JSON.stringify(body);
+    //     console.log(bodyString);
+    //     let headers = new Headers({'Content-Type': 'application/json'});
+    //     let options = new RequestOptions({headers: headers});
 
-        return this
-            .http
-            .post(this.registerUrl, body, options)
-            .map((res : Response) => res.json());        
-    }
+    //     return this
+    //         .http
+    //         .post(this.registerUrl, body, options)
+    //         .map((res : Response) => res.json());        
+    // }
 
     login(body : Object) : Observable < any > {
         let bodyString = JSON.stringify(body);
@@ -71,7 +71,7 @@ export class LoginService {
         return this
             .http
             .post(this.loginUrl, body, options)
-            .map((res : Response) => res.json());
+            .map((res : Response) => console.log(res.json()));
 
     }
 }
