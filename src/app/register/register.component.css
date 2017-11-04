@@ -1,7 +1,15 @@
-.login{
+.login {
     padding: 10px;
     margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
+
 .padding {
     margin: 20px;
+}
+
+.container-fluid {
+    padding-top: 180px;
+    padding-left: 120px;
 }
