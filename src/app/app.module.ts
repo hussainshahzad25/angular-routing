@@ -37,12 +37,14 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     FormsModule, ReactiveFormsModule,HttpModule,HttpClientModule,
     RouterModule.forRoot([
+      {'path':"","component":LoginComponent},
       {'path':"home","component":HomeComponent},
       {'path':"employee","component":EmployeeListComponent},
       {'path':"department","component":DepartmentListComponent},
-      {'path':"login","component":LoginComponent},
+      
       {'path':"register","component":RegisterComponent},
       {'path':"nav","component":NavComponent},
+      
       
   ])
   ],
