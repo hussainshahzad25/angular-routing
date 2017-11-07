@@ -25,7 +25,6 @@ import {RegisterService} from './register/register.service';
 import {NavService} from './nav/nav.service';
 import {DepartmentdetailsComponent} from './departmentdetails/departmentdetails.component';
 import {UploadComponent} from './upload/upload.component';
-import {ForgetpasswordComponent} from './forgetpassword/forgetpassword.component';
 import {NewloginComponent} from './newlogin/newlogin.component';
 import { HelpComponent } from './help/help.component';
 import { Login1Component } from './login1/login1.component';
@@ -33,6 +32,7 @@ import { Login2Component } from './login2/login2.component';
 import { Login3Component } from './login3/login3.component';
 import { Login4Component } from './login4/login4.component';
 import { Login5Component } from './login5/login5.component';
+import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
 
 @NgModule({
   declarations: [

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 @Component({
   selector: 'app-departmentdetails',
   templateUrl: './departmentdetails.component.html',
@@ -8,11 +8,33 @@ import { ActivatedRoute } from '@angular/router';
 export class DepartmentdetailsComponent implements OnInit {
 
   public departmentId ;
-  constructor(private route:ActivatedRoute) { }
+  public id;
+  constructor(private route:ActivatedRoute,private router:Router) { }
+
+  // ngOnInit() {
+  //   let id = this.route.snapshot.params['deptId'];
+  //   this.departmentId = id;
+  // }
 
   ngOnInit() {
-    let id = this.route.snapshot.params['deptId'];
-    this.departmentId = id;
+  //  this.route.params.subscribe((params: Params)=>{
+  //   let id = parseInt(params['deptId']);
+  //   this.departmentId = id;
+  //  })
+  this.route.params.subscribe(params => {
+    let id = parseInt(params['deptId']);
+      this.departmentId = id;
+  });
   }
+  goPrevious(){
+    let preId = this.departmentId - 1;
+    this.router.navigate(['/department',preId]);
+  }
+
+  goNext(){
+    let nextPage = this.departmentId + 1;
+    this.router.navigate(['/department',nextPage]);
+  }
+
 
 }

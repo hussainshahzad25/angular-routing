@@ -19,26 +19,26 @@ export class DepartmentListComponent implements OnInit {
     console.log("Hii");
     this.data = [
       {
-        "deptId":"1",
+        "deptId":1,
         "deptName": "Angular"        
       },{
-        "deptId":"2",
+        "deptId":2,
         "deptName": "Java"        
       },{
-        "deptId":"3",
+        "deptId":3,
         "deptName": "Node"        
       },{
-        "deptId":"4",
+        "deptId":4,
         "deptName": "Spring"        
       },{
-        "deptId":"5",
+        "deptId":5,
         "deptName": "Ionic"        
       }
     ]
   }
 
   onSelect(dept){
-    this.router.navigate(['/department',dept.deptId])
+    this.router.navigate(['/department',dept.deptId]);
 
   }
 
