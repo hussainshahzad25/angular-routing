@@ -10,7 +10,7 @@
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/employee" routerLinkActive="active">Employee List</a>
                 </li>
@@ -42,28 +42,34 @@
             </div>
         </main>
 
-
-
-
-        <!-- CONTENT START-->
-
-
-
-        <!-- CONTENT END -->
     </div>
     <!-- row end -->
-    
 
-    <label>Dept List</label>
-    <ul class="items" (click)="onSelect(dept)" *ngFor="let dept of data">
-        <!-- <li > -->
-    
-            <span class="badge">{{dept.deptId}}</span><font class="font">{{dept.deptName}}</font>
-    
-        <!-- </li> -->
-    </ul>
 
-   
+    <div class="row">
+
+        <div class="col-sm-4 col-sm-offset-4">
+            <label>Dept List</label>
+
+            <table class="table table-responsive">
+                <!-- table-inverse -->
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">Dept id</th>
+                        <th style="text-align: center;">Dept Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr (click)="onSelect(dept)" *ngFor="let dept of data" class="success">
+                        <td>{{dept.deptId}}</td>
+                        <td>{{dept.deptName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
 </div>
 
 <!-- container-fluid End -->
