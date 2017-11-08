@@ -33,6 +33,7 @@ import { Login3Component } from './login3/login3.component';
 import { Login4Component } from './login4/login4.component';
 import { Login5Component } from './login5/login5.component';
 import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
     Login2Component,
     Login3Component,
     Login4Component,
-    Login5Component
+    Login5Component,
+    PagenotfoundComponent
 
   ],
   imports: [
@@ -126,6 +128,10 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
       }, {
         'path': "login5",
         "component": Login5Component
+      }
+      , {
+        'path': "**",
+        "component": PagenotfoundComponent
       }
 
       
