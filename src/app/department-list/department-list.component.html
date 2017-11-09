@@ -60,7 +60,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr (click)="onSelect(dept)" *ngFor="let dept of data" class="success">
+                    <tr (click)="onSelect(dept)" *ngFor="let dept of data" ><!-- class="success" -->
                         <td>{{dept.deptId}}</td>
                         <td>{{dept.deptName}}</td>
                     </tr>
