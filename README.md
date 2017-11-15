@@ -1,5 +1,19 @@
 # SecondApp
 
+To Enable Hasing in your app
+
+ADD Below line in [app.module.ts]
+
+1. import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
+2. .....,RouterModule.forRoot(routes, { useHash: true }),....
+
+3. providers: [
+    LoginService, RegisterService, NavService, ProfileService, [{ provide: LocationStrategy, useClass: HashLocationStrategy }]
+  ],
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.2.
 
 ## Development server

@@ -37,6 +37,8 @@ import { ForgetpasswordComponent } from './forgetpassword/forgetpassword.compone
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ProfileComponent } from './profile/profile.component';
 
+
+// FOR HASING
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const routes: Routes = [{
