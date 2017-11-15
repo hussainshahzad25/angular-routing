@@ -35,9 +35,10 @@ export class LoginComponent implements OnInit {
     this
       .loginService
       .login(value)
-      .subscribe((data) => {
-        console.log(data);
-        this.router.navigate(['/dashboard']);
+      .subscribe((data) => {        
+        console.log("Data : "+ JSON.stringify(data));
+        //this.router.navigate(['/dashboard']);       
+          this.router.navigate(['/profile',data.email]);    
       }, (error) => {               
         let jsonData = JSON.parse(error._body);
         console.log(jsonData.message);        

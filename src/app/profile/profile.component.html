@@ -1,0 +1,37 @@
+<div align="right">
+  <li><a [routerLink]="['/logout']"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span> Logout</a></li>
+</div>
+<p>
+  {{userEmail}}
+</p>
+
+
+<button (click)="getInfos()">GET INFO</button>
+
+
+<table class="table table-bordered">
+  <thead>
+      <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>State</th>
+          <th>City</th>
+          <th>Pin Code</th>
+      </tr>
+  </thead>
+  <tbody *ngFor="let infoss of fullInfo">
+      <tr>
+          <td>{{infoss.firstName}}</td>
+          <td>{{infoss.lastName}}</td>
+          <td>{{infoss.email}}</td>
+          <td>{{infoss.mobile}}</td>
+          <td>{{infoss.state}}</td>
+          <td>{{infoss.city}}</td>
+          <td>{{infoss.pincode}}</td>
+      </tr>
+  </tbody>
+</table>
+
+

@@ -1,11 +1,12 @@
 <div class="container-fluid" style="text-align:center">
-    <h1>{{title}}!</h1>    
+    <!-- <h1>{{title}}!</h1>     -->
     <nav>
-        <a class="btn .btn-primary" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-        <a class="btn .btn-primary" routerLink="/home" routerLinkActive="active">Home</a>
-        <a class="btn .btn-primary" routerLink="/department" routerLinkActive="active">Department</a>
-        <a class="btn .btn-primary" routerLink="/employee" routerLinkActive="active">Employee</a>        
-        <a class="btn .btn-primary" routerLink="/nav" routerLinkActive="active">Details</a>       
+        <!-- <a class="btn .btn-primary" routerLink="/dashboard" routerLinkActive="active">Dashboard</a> -->
+        <a class="btn .btn-primary" routerLink="/home" routerLinkActive="active" id="primary">Home</a>
+        <a class="btn .btn-primary" routerLink="/department" routerLinkActive="active" id="primary">Department</a>
+        <a class="btn .btn-primary" routerLink="/employee" routerLinkActive="active" id="primary">Employee</a>        
+        <a class="btn .btn-primary" routerLink="/nav" routerLinkActive="active" id="primary">Details</a>       
+        <!-- <a class="btn .btn-primary" routerLink="/profile" routerLinkActive="active">Profile</a>        -->
     </nav>
     <router-outlet></router-outlet>
 </div>
