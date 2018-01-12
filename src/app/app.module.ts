@@ -47,24 +47,20 @@ import { DepartmentdetailsComponent } from './departmentdetails/departmentdetail
     BrowserModule,
     FormsModule, ReactiveFormsModule, HttpModule, HttpClientModule,
     RouterModule.forRoot([
-
       { 'path': "", "component": LoginComponent },
       { 'path': "home", "component": HomeComponent },
       { 'path': "employee", "component": EmployeeListComponent },
       { 'path': "department", "component": DepartmentListComponent },
-
       { 'path': "register", "component": RegisterComponent },
-
       { 'path': "home", "component": HomeComponent, data: { title: 'Home' } },
       { 'path': "employee", "component": EmployeeListComponent, data: { title: 'Employee List' } },
       { 'path': "department", "component": DepartmentListComponent, data: { title: 'Department List' } },
       { 'path': "login", "component": LoginComponent, data: { title: 'Login' } },
       { 'path': "register", "component": RegisterComponent, data: { title: 'Register' } },
-
       { 'path': "nav", "component": NavComponent },
       { 'path': "dashboard", "component": DashboardComponent },
       { 'path': "department/:deptId", "component": DepartmentdetailsComponent },
-    ]),
+    ], { 'useHash': true }),
 
     SimpleNotificationsModule.forRoot(),
     ToastyModule.forRoot()

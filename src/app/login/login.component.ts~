@@ -27,23 +27,25 @@ export class LoginComponent implements OnInit {
       .getInfos()
       .subscribe(response => this.fullInfo = response);
   }
-
+ 
   message: string;
   login(value) {
-    this.router.navigate(['/nav']);
+
     // let jsonData = JSON.stringify(value);
     // console.log(jsonData);
 
-    // this.loginService.login(value).subscribe((data) => {
-    //   this.router.navigate(['/dashboard']);
-    // }, (error) => {
-    //   if (error.status == 0) {
-    //     alert('Api is not Working or DOwn');
-    //   }
-    //   else {
-    //     console.log(error);
-    //     alert(error);
-    //   }
-    // });
+    this
+      .loginService
+      .login(value)
+      .subscribe((data) => {
+        console.log(data);
+        this.router.navigate(['/dashboard']);
+      }, (error) => {               
+        if(error.status == 0){
+		alert('Api is not Working or DOwn');
+	}
+        console.log(error);        
+        alert(error);
+      });
   }
 }

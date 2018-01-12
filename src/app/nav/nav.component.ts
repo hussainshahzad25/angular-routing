@@ -35,7 +35,17 @@ export class NavComponent implements OnInit {
     this
       .navService
       .register(value)
-      .subscribe(response => this.user = response);
+      .subscribe(response =>{
+        this.user = response;
+      },(error)=>{
+        if (error.status == 0) {
+          alert('Api is not Working or Down');
+        }
+        else {
+          console.log(error);
+          alert(error);
+        }
+      });
   }
 
   login(value) { }

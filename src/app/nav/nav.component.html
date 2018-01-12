@@ -32,31 +32,82 @@
             <div class="padding"></div>
             <div class="table-responsive">
                 <!-- <h2>Details Page</h2> -->
-                <div class="padding"></div>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Email</th>
-                            <th>Mobile</th>
-                            <th>State</th>
-                            <th>City</th>
-                            <th>Pin Code</th>
-                        </tr>
-                    </thead>
-                    <tbody *ngFor="let infoss of fullInfo">
-                        <tr>
-                            <td>{{infoss.firstName}}</td>
-                            <td>{{infoss.lastName}}</td>
-                            <td>{{infoss.email}}</td>
-                            <td>{{infoss.mobile}}</td>
-                            <td>{{infoss.state}}</td>
-                            <td>{{infoss.city}}</td>
-                            <td>{{infoss.pincode}}</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div *ngIf="fullInfo.length>0; then fullData else nothing"></div>
+                <ng-template #fullData>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Mobile</th>
+                                        <th>State</th>
+                                        <th>City</th>
+                                        <th>Pin Code</th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let infoss of fullInfo">
+                                    <tr>
+                                        <td>{{infoss.firstName}}</td>
+                                        <td>{{infoss.lastName}}</td>
+                                        <td>{{infoss.email}}</td>
+                                        <td>{{infoss.mobile}}</td>
+                                        <td>{{infoss.state}}</td>
+                                        <td>{{infoss.city}}</td>
+                                        <td>{{infoss.pincode}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template #nothing>
+                    <div class="panel panel-default">
+
+                        <div class="panel-heading">
+                            Long Info
+                        </div>
+                        <div class="panel-body">
+                            No Data Available
+                        </div>
+                    </div>
+                </ng-template>
+
+                <!-- Short Info Table -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Short Info
+                    </div>
+                    <div class="row">
+                        <div class="panel-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let infoss of shortInfo">
+                                    <tr>
+                                        <td>{{infoss.firstName}}</td>
+                                        <td>{{infoss.lastName}}</td>
+                                        <td>{{infoss.email}}</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </main>
     </div>
