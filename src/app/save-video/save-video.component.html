@@ -1,0 +1,39 @@
+<!-- <ngx-toast-notification></ngx-toast-notification> -->
+<form class="emp-form" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <input class="form-control" type="hidden" name="$key" #$key="ngModel" [(ngModel)]="videoService.selectedVideo.$key">
+    <div class="form-row">
+        <div class="form-group  col-md-6">
+            <input class="form-control" name="title" #title="ngModel" [(ngModel)]="videoService.selectedVideo.title" placeholder="Title"
+                required>
+            <div class="validation-error" *ngIf="title.invalid && title.touched">
+                This Field is Required
+            </div>
+        </div>
+        <div class="form-group  col-md-6">
+            <input class="form-control" name="url" #url="ngModel" [(ngModel)]="videoService.selectedVideo.url" placeholder="URL" required>
+            <div class="validation-error" *ngIf="url.invalid && url.touched">
+                This Field is Required
+            </div>
+        </div>
+        <div class="form-group  col-md-12">
+            <input class="form-control" name="description" #description="ngModel" [(ngModel)]="videoService.selectedVideo.description"
+                placeholder="description" required>
+            <div class="validation-error" *ngIf="description.invalid && description.touched">
+                This Field is Required
+            </div>
+        </div>
+
+
+
+        <div class="form-group  col-md-8">
+            <button [disabled]="!userForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+                <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                Submit</button>
+        </div>
+        <div class="form-group  col-md-4">
+            <button class="btn btn-lg btn-block btn-secondary" type="reset">
+                <i class="fa fa-repeat" aria-hidden="true"></i>
+                Reset</button>
+        </div>
+    </div>
+</form>
